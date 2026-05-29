@@ -26,6 +26,7 @@ require("look.transparency.default")
 
 -- ANIMATIONS --
 -- TODO --
+require("look.animations.default")
 
 -- LAYOUT --
 -- TODO --
