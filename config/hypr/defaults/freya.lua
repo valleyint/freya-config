@@ -12,4 +12,8 @@ defaults.mod = "SUPER"
 
 defaults.launcher = "noctalia msg panel-toggle launcher"
 
+if not defaults.useNoctalia then
+	defaults.launcher = "fuzzle"
+end
+
 return defaults

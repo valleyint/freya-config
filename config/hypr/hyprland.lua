@@ -8,6 +8,7 @@ hl.on("hyprland.start", function()
 end)
 
 -- CURSOR --
+-- TODO--
 require("cursor.default")
 
 -- GTK THEME --
@@ -41,3 +42,6 @@ require("keymaps.me")
 
 -- MONITOR --
 require("monitors.HDMI4K60")
+
+-- APP SPECIFIC SETTINGS --
+require("apps.noctalia")
