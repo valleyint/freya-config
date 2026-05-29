@@ -13,6 +13,7 @@ if defaults.useNoctalia then
 	hl.bind(defaults.mod .. " + RETURN ", hl.dsp.exec_cmd(defaults.ipc .. "panel-toggle control-center"))
 	hl.bind(defaults.mod .. " + C ", hl.dsp.exec_cmd(defaults.ipc .. "panel-toggle clipboard"))
 	hl.bind(defaults.mod .. " + W ", hl.dsp.exec_cmd(defaults.ipc .. "panel-toggle wallpaper"))
+	hl.bind(defaults.mod .. " + S ", hl.dsp.exec_cmd(defaults.ipc .. "settings-toggle"))
 end
 
 hl.bind(defaults.mod .. " + R ", hl.dsp.exec_cmd(defaults.launcher))
