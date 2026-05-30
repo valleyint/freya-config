@@ -63,7 +63,7 @@ style = "fg:pink"
 format = "[$hostname]($style) "
 
 [directory]
-style = "fg:peach"
+style = "fg:lavender"
 format = "[ $path]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -87,7 +87,7 @@ format = '[[($all_status$ahead_behind)](fg:pink)]($style)'
 [nodejs]
 symbol = ""
 style = "fg:green"
-format = '[[ $symbol( $version)](fg:crust bg:green)]($style)'
+format = '[[ $symbol( $version)](fg:rosewater)]($style)'
 
 [bun]
 symbol = ""

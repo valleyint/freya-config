@@ -1,0 +1,13 @@
+& {
+  // flip (Discord light mode uses in places where contrast is good)
+  --white: #{$crust} !important;
+  --white-500: #{$crust} !important;
+
+  --black-500: #{$text} !important;
+}
+
+// Exception
+div[class*="tooltipGrey_"] {
+  --white-500: #{$text};
+  --white: #{$text};
+}

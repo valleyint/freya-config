@@ -1,0 +1,3 @@
+[submodule "config/vesktop/themes/catppuccin"]
+	path = config/vesktop/themes/catppuccin
+	url = https://github.com/catppuccin/discord
