@@ -44,4 +44,4 @@ require("keymaps.me")
 require("monitors.HDMI4K60")
 
 -- APP SPECIFIC SETTINGS --
-require("apps.noctalia")
+require("look.apps.noctalia")

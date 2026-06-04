@@ -17,7 +17,7 @@
     "mHover": "#c6a0f6",
     "mOnHover": "#11111b",
     "terminal": {
-      "foreground": "#8caaee",
+      "foreground": "#f0c6c6",
       "background": "#1e1e2e",
       "selectionFg": "#cdd6f4",
       "selectionBg": "#585b70",
