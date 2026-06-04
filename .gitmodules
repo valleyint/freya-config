@@ -1,3 +1,15 @@
 [submodule "config/vesktop/themes/catppuccin"]
 	path = config/vesktop/themes/catppuccin
 	url = https://github.com/catppuccin/discord
+[submodule "external/aO3/ao3-rose-pine"]
+	path = external/aO3/ao3-rose-pine
+	url = https://github.com/Wolfbatcat/ao3-rose-pine.git
+[submodule "external/dark-reader/catppuccin"]
+	path = external/dark-reader/catppuccin
+	url = https://github.com/catppuccin/dark-reader
+[submodule "external/thunderbird/catppuccin"]
+	path = external/thunderbird/catppuccin
+	url = https://github.com/catppuccin/thunderbird
+[submodule "external/tumblr/catppuccin"]
+	path = external/tumblr/catppuccin
+	url = https://github.com/catppuccin/tumblr
