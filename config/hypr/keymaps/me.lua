@@ -17,6 +17,7 @@ if defaults.useNoctalia then
 end
 
 hl.bind(defaults.mod .. " + R ", hl.dsp.exec_cmd(defaults.launcher))
+hl.bind(defaults.mod .. " + Q ", hl.dsp.exec_cmd(defaults.launcher))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(defaults.mod .. " + left", hl.dsp.focus({ direction = "left" }))

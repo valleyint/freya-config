@@ -21,8 +21,17 @@ order = [ "default" ]
     thickness = 25
     widget_spacing = 10
 
+[battery.device."/org/freedesktop/UPower/devices/battery_hidpp_battery_0"]
+warning_threshold = 10
+
+[battery.device."/org/freedesktop/UPower/devices/headphones_dev_AC_BF_71_DD_05_5C"]
+warning_threshold = 20
+
 [brightness]
 enable_ddcutil = true
+
+[calendar]
+enabled = true
 
 [control_center]
 compact = false
@@ -31,9 +40,9 @@ compact = false
 schema_version = 1
 widget_order = [
     "desktop-widget-0000000000000001",
-    "desktop-widget-0000000000000002",
     "desktop-widget-0000000000000003",
-    "desktop-widget-0000000000000004"
+    "desktop-widget-0000000000000004",
+    "desktop-widget-0000000000000005"
 ]
 
     [desktop_widgets.grid]
@@ -91,6 +100,17 @@ widget_order = [
         background = false
         layout = "horizontal"
 
+    [desktop_widgets.widget.desktop-widget-0000000000000005]
+    cx = 1754.0
+    cy = 370.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.0
+    type = "fancy_audio_visualizer"
+
+        [desktop_widgets.widget.desktop-widget-0000000000000005.settings]
+        background = false
+
 [dock]
 auto_hide = true
 position = "right"
@@ -114,6 +134,95 @@ behavior_order = [ "lock", "screen-off", "suspend" ]
     enabled = false
     lock_before_suspend = true
     timeout = 900
+
+[location]
+address = "Jayanagar,Bengaluru,India"
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 1
+widget_order = [
+    "lockscreen-login-box@HDMI-A-1",
+    "lockscreen-widget-0000000000000001",
+    "lockscreen-widget-0000000000000003",
+    "lockscreen-widget-0000000000000004",
+    "lockscreen-widget-0000000000000005"
+]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@HDMI-A-1"]
+    cx = 980.0
+    cy = 540.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.0
+    type = "login_box"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    cx = 1710.0
+    cy = 990.739990234375
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.3510638475418091
+    type = "clock"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = false
+        shadow = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    cx = 1616.0
+    cy = 540.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.9999998807907104
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        aspect_ratio = 2.5
+        background = false
+        bands = 32
+        show_when_idle = false
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000003]
+    cx = 1430.4000244140625
+    cy = 990.239990234375
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.8400000333786011
+    type = "weather"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000003.settings]
+        background = false
+        shadow = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000004]
+    cx = 1686.7333984375
+    cy = 112.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.2666666507720947
+    type = "media_player"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000004.settings]
+        background = false
+        layout = "horizontal"
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000005]
+    cx = 1754.0
+    cy = 370.0
+    output = "HDMI-A-1"
+    rotation = 0.0
+    scale = 1.0
+    type = "fancy_audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000005.settings]
+        background = false
+
 
 [noctalia_state]
 setup_wizard_completed = true
@@ -140,15 +249,45 @@ time_format = "{:%H:%M:%S}"
 
     [shell.panel]
     clipboard_placement = "attached"
-    control_center_placement = "centered"
+    control_center_placement = "attached"
     open_near_click_clipboard = true
     open_near_click_wallpaper = true
-    session_placement = "floating"
+    session_placement = "centered"
     transparency_mode = "soft"
 
     [shell.screen_corners]
     enabled = true
     size = 32
+
+    [[shell.session.actions]]
+    action = "lock"
+    enabled = true
+    shortcut = "1"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "reboot"
+    enabled = true
+    shortcut = "4"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "shutdown"
+    enabled = true
+    shortcut = "5"
+    variant = "destructive"
+
+    [[shell.session.actions]]
+    action = "logout"
+    enabled = true
+    shortcut = "2"
+    variant = "default"
+
+    [[shell.session.actions]]
+    action = "suspend"
+    enabled = true
+    shortcut = "3"
+    variant = "default"
 
 [system.monitor]
 cpu_poll_seconds = 1
@@ -168,12 +307,16 @@ wallpaper_scheme = "m3-rainbow"
 
 [wallpaper]
 directory = "/home/darshan/wallpapers"
+transition = [ "honeycomb", "stripes" ]
 
     [wallpaper.default]
-    path = "/home/darshan/wallpapers/2.png"
+    path = "/home/darshan/wallpapers/20.jpg"
+
+    [wallpaper.last]
+    path = "/home/darshan/wallpapers/20.jpg"
 
     [wallpaper.monitors.HDMI-A-1]
-    path = "/home/darshan/wallpapers/2.png"
+    path = "/home/darshan/wallpapers/20.jpg"
 
 [weather]
 address = "Bengaluru,India"
