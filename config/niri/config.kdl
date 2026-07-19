@@ -1,0 +1,187 @@
+prefer-no-csd
+
+spawn-at-startup "noctalia"
+spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
+spawn-at-startup "/home/darshan/freya-conf/external/oniri/oniri-1.2.6-x86_64 -T"
+
+screenshot-path "~/screenshot"
+
+environment {
+    QT_QPA_PLATFORM "wayland"
+}
+
+input {
+    focus-follows-mouse
+}
+
+cursor {
+
+}
+
+overview {
+    backdrop-color "#363a4f"
+}
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+
+window-rule {
+    match app-id="firefox"
+    open-maximized false
+    open-fullscreen false
+}
+
+// NOCTALIA 
+window-rule {
+  match app-id="dev.noctalia.Noctalia"
+  open-floating true
+  default-column-width { fixed 1080; }
+  default-window-height { fixed 920; }
+}
+
+debug {
+  // Allows notification actions and window activation from Noctalia.
+  honor-xdg-activation-with-invalid-serial
+}
+
+layer-rule {
+  match namespace="^noctalia-backdrop"
+  place-within-backdrop true
+}
+
+/*
+  Noctalia
+  Disable xray on all our surfaces so it looks more realistic.
+  Noctalia publishes blur regions automatically when ext-background-effects is available.
+*/
+layer-rule {
+  match namespace="^noctalia-(bar-[^\"]+|notification|dock|panel|attached-panel|osd)$"
+  background-effect {
+    xray false
+    // blur false
+  }
+}
+
+
+
+
+output "HDMI-A-3" {
+    mode "3840x2160@60"
+    scale 2.0
+    position x=0 y=0
+}
+
+blur {
+    passes 2
+    offset 2 
+    saturation 1.1
+    noise 0.01
+}
+
+layout {
+    gaps 2.0
+
+    border {
+        width 2
+        active-color "#c4a7e7"
+        inactive-color "#6e6a86"
+    }
+
+    focus-ring {
+        off
+    }
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5 
+        proportion 1.0 
+    }
+
+    preset-window-heights {
+        proportion 0.5 
+        proportion 1.0
+    }
+
+    struts {
+        left 6 
+        right 6
+        top 6 
+        bottom 6
+    }
+}
+
+window-rule {
+    match is-active=true
+    opacity 0.90
+}
+
+window-rule {
+    match is-active=false
+    opacity 0.75
+}
+
+window-rule {
+    geometry-corner-radius 15
+    clip-to-geometry true
+    draw-border-with-background false
+
+    background-effect {
+        blur true
+        xray false
+    }
+}
+
+
+binds {
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    Mod+R { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+Q { spawn-sh "noctalia msg panel-toggle launcher"; }
+    Mod+L { spawn-sh "noctalia msg panel-toggle session"; }
+    Mod+Shift+L { spawn-sh "noctalia msg screen-lock"; }
+    Mod+Return { spawn-sh "noctalia msg panel-toggle control-center"; }
+    Mod+C { spawn-sh "noctalia msg panel-toggle clipboard"; }
+    Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+    Mod+S { spawn-sh "noctalia msg settings-toggle"; }
+    Mod+Shift+C { close-window; }
+    Mod+V { toggle-window-floating; }
+    Mod+Shift+E { quit; }
+    Mod+E { switch-preset-column-width; }
+    Mod+A { switch-preset-window-height; }
+    Mod+O { toggle-overview; }
+
+    Mod+WheelScrollDown cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp   cooldown-ms=150 { focus-workspace-up; }
+    Mod+WheelScrollRight                { focus-column-right; }
+    Mod+WheelScrollLeft                 { focus-column-left; }
+    
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+5 { focus-workspace 5; }
+    Mod+6 { focus-workspace 6; }
+    Mod+7 { focus-workspace 7; }
+    Mod+8 { focus-workspace 8; }
+    Mod+9 { focus-workspace 9; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+5 { move-column-to-workspace 5; }
+    Mod+Shift+6 { move-column-to-workspace 6; }
+    Mod+Shift+7 { move-column-to-workspace 7; }
+    Mod+Shift+8 { move-column-to-workspace 8; }
+    Mod+Shift+9 { move-column-to-workspace 9; }
+}
