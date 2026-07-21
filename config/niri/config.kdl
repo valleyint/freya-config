@@ -2,7 +2,7 @@ prefer-no-csd
 
 spawn-at-startup "noctalia"
 spawn-at-startup "dbus-update-activation-environment" "--systemd" "WAYLAND_DISPLAY" "XDG_CURRENT_DESKTOP"
-spawn-at-startup "/home/darshan/freya-conf/external/oniri/oniri-1.2.6-x86_64 -T"
+spawn-at-startup "oniri" "-T"
 
 screenshot-path "~/screenshot"
 
@@ -94,7 +94,6 @@ layout {
     }
 
     preset-column-widths {
-        proportion 0.33333
         proportion 0.5 
         proportion 1.0 
     }
