@@ -1,0 +1,7 @@
+[input]
+middle_click_paste = true
+window_drag_toggle = "mod"
+
+[input.focus]
+follows_mouse = true
+

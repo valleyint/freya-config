@@ -1,0 +1,4 @@
+[layout.dwindle]
+preserve_split = false # keep each split direction fixed after creation
+new_exits_fullscreen = false
+

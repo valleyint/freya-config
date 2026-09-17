@@ -1,0 +1,7 @@
+[input.mouse]
+natural_scroll = false
+accel_profile = "adaptive"  # "flat", "adaptive", or a custom curve
+sensitivity = 0.0        # -1.0 to 1.0
+scroll_wheel_step = 60  # 1-1000, pixels per step for layout-scroll-left/right
+# scroll_button = "MouseBack"       # Hold this button and move the mouse to scroll
+# scroll_button_lock = false        # One press latches scrolling instead of holding

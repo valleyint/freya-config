@@ -1,0 +1,32 @@
+[include]
+files = [
+    "./general/general.toml",
+    "./general/env.toml",
+    "./general/events.toml",
+
+    "./keybinds/me.toml",
+
+    "./inputs/general.toml",
+    "./inputs/keyboards/keyboard.toml",
+
+    "./layouts/scroll.toml",
+    "./layouts/dwindle.toml",
+    "./layouts/general.toml",
+
+    "./appearance/color.toml",
+    "./appearance/window.toml",
+    
+]
+
+[include.optional]
+files = [
+    # MONITORS
+    "./outputs/lg.toml",
+    "./outputs/virt.toml",
+    "./outputs/sloat.toml",
+
+    "./inputs/pointing/mouse.toml",
+    "./inputs/pointing/touchpad.toml",
+    "./inputs/keyboards/builtin.toml",
+    "./inputs/keyboards/sunrise.toml",
+]

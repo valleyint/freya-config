@@ -1,0 +1,77 @@
+[keybinds]
+"Mod+R" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+Q" = "spawn:noctalia msg panel-toggle launcher"
+"Mod+L" = "spawn:noctalia msg panel-toggle session"
+"Mod+Shift+L" = "spawn:noctalia msg screen-lock"
+"Mod+Return" = "spawn:noctalia msg panel-toggle control-center"
+"Mod+C" = "spawn:noctalia msg panel-toggle clipboard"
+"Mod+W" = "spawn:noctalia msg panel-toggle wallpaper"
+"Mod+S" = "spawn:noctalia msg settings-toggle"
+"Mod+Left" = "window-focus-left"
+"Mod+Down" = "window-focus-down"
+"Mod+Up" = "window-focus-up"
+"Mod+Right" = "window-focus-right"
+"Mod+Shift+C" = "window-close"
+
+# Window state and layout
+"Mod+T" = "window-toggle-floating"
+"Mod+Shift+T" = "window-focus-switch-floating"
+"Mod+P" = "window-toggle-pinned"
+"Mod+M" = "window-toggle-maximize-to-edges"
+
+# Overview
+"Mod+O" = { action = "overview-toggle", repeat = false }
+"Mod+K" = "cheatsheet-toggle"
+
+# Common keybinds
+"Mod+Escape" = "session-quit"
+"Mod+Tab" = "window-focus-next"
+"Mod+Shift+Left" = "column-move-left"
+"Mod+Shift+Down" = "window-move-down"
+"Mod+Shift+Up" = "window-move-up"
+"Mod+Shift+Right" = "column-move-right"
+"Mod+F" = "window-toggle-fullscreen"             # Exit restores the previous layout size immediately
+"Mod+E" = "window-cycle-width"
+"Mod+H" = "window-cycle-height"
+"Mod+Shift+R" = "window-cycle-width-back"
+"Mod+Comma" = "window-consume-left"
+"Mod+WheelUp" = "window-focus-or-workspace-up"
+"Mod+WheelDown" = "window-focus-or-workspace-down"
+
+# Workspaces. Bare digits are positions on the output under the pointer.
+"Mod+1" = "workspace-switch:1"
+"Mod+2" = "workspace-switch:2"
+"Mod+3" = "workspace-switch:3"
+"Mod+4" = "workspace-switch:4"
+"Mod+5" = "workspace-switch:5"
+"Mod+6" = "workspace-switch:6"
+"Mod+7" = "workspace-switch:7"
+"Mod+8" = "workspace-switch:8"
+"Mod+9" = "workspace-switch:9"
+"Mod+Shift+1" = "window-move-to-workspace:1"
+"Mod+Shift+2" = "window-move-to-workspace:2"
+"Mod+Shift+3" = "window-move-to-workspace:3"
+"Mod+Shift+4" = "window-move-to-workspace:4"
+"Mod+Shift+5" = "window-move-to-workspace:5"
+"Mod+Shift+6" = "window-move-to-workspace:6"
+"Mod+Shift+7" = "window-move-to-workspace:7"
+"Mod+Shift+8" = "window-move-to-workspace:8"
+"Mod+Shift+9" = "window-move-to-workspace:9"
+# Quote an all-digit name to distinguish it from a position.
+# "Mod+Ctrl+2" = 'workspace-switch:"2"/DP-2'
+
+"Mod+D" = "workspace-set-layout:dwindle"
+"Mod+Z" = "workspace-set-layout:scrolling"
+
+"XF86AudioRaiseVolume" = {allow-when-locked=true, action =  "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0" }
+"XF86AudioLowerVolume" = {allow-when-locked=true, action =  "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-" }
+"XF86AudioMute" = {allow-when-locked=true, action =  "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle" }
+"XF86AudioMicMute" = {allow-when-locked=true, action =  "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle" }
+
+"XF86AudioPlay" = "spawn:playerctl play-pause"
+"XF86AudioNext" = "spawn:playerctl next"
+"XF86AudioPrev" = "spawn:playerctl previous"
+
+# Brightness
+"XF86MonBrightnessUp" = "spawn:brightnessctl set +5%"
+"XF86MonBrightnessDown" = "spawn:brightnessctl set 5%-"

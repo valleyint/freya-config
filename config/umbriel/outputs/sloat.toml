@@ -1,0 +1,14 @@
+[output.eDP-1]
+mode = "2880x1864@59.999"
+position = [0, 0]
+scale = 2.0
+#vrr = "fullscreen"
+#tearing = true
+#direct_scanout = false
+hdr = "auto"
+#sdr_white = 203
+workspaces = "dynamic"
+min_workspaces = 2 
+workspace_axis = "vertical"
+
+
